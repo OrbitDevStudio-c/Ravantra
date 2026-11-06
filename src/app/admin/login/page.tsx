@@ -4,6 +4,7 @@ import Image from "next/image";
 import { isPreviewMode } from "@/lib/env";
 import { adminUsers, DEMO_PASSWORD, img } from "@/config/demo-data";
 import { AdminLoginForm } from "./login-form";
+import { Logo } from "@/components/ui/logo";
 
 export const metadata: Metadata = { title: "Admin sign in", robots: { index: false, follow: false } };
 
@@ -17,7 +18,7 @@ export default async function AdminLoginPage({ searchParams }: PageProps<"/admin
       <div className="relative hidden overflow-hidden bg-espresso lg:block">
         <Image src={img("1560066984-138dadb4c035", 1400)} alt="" fill sizes="50vw" className="object-cover opacity-45" quality={60} priority />
         <div className="absolute inset-0 flex flex-col justify-between p-12 text-ivory">
-          <span className="font-serif text-2xl tracking-[0.34em]">RAVANTRA</span>
+          <Logo variant="full" tone="light" height={130} />
           <div>
             <p className="eyebrow text-gold">Central administration</p>
             <p className="mt-4 max-w-md font-serif text-5xl leading-[1.02]">Every division, every order, every appointment — in one place.</p>
@@ -28,7 +29,7 @@ export default async function AdminLoginPage({ searchParams }: PageProps<"/admin
 
       <div className="flex items-center justify-center px-6 py-16">
         <div className="w-full max-w-sm">
-          <Link href="/" className="font-serif text-xl tracking-[0.3em] lg:hidden">RAVANTRA</Link>
+          <Link href="/" className="inline-block lg:hidden" aria-label="RAVANTRA home"><Logo variant="full" height={110} /></Link>
           <h1 className="mt-6 font-serif text-4xl text-espresso">Staff sign in</h1>
           <p className="mt-2 text-sm text-ink-soft">Use your RAVANTRA staff account. Access is based on your role.</p>
 

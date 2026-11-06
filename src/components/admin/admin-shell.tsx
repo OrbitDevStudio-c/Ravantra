@@ -22,6 +22,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Logo } from "@/components/ui/logo";
 import { signOut } from "@/features/auth/actions";
 import { cn, initials } from "@/lib/utils";
 
@@ -73,7 +74,7 @@ export function AdminShell({
               <SidebarInner groups={groups} mobile />
             </SheetContent>
           </Sheet>
-          <span className="font-serif text-lg tracking-[0.3em] lg:hidden">RAVANTRA</span>
+          <Link href="/admin" className="lg:hidden" aria-label="RAVANTRA admin"><Logo variant="lockup" height={34} /></Link>
           {preview && (
             <span className="hidden border border-gold/50 bg-gold/15 px-2 py-0.5 text-[0.65rem] uppercase tracking-[0.14em] text-gold-deep sm:inline">
               Preview · read-only demo data
@@ -116,8 +117,8 @@ function SidebarInner({ groups, mobile }: { groups: NavGroup[]; mobile?: boolean
   return (
     <div className="flex h-full flex-col overflow-y-auto">
       <Link href="/admin" className="px-6 pb-6 pt-7">
-        <span className="block font-serif text-[1.35rem] tracking-[0.32em]">RAVANTRA</span>
-        <span className="mt-1 block text-[0.58rem] uppercase tracking-[0.3em] text-gold">Central administration</span>
+        <Logo variant="lockup" tone="light" height={42} />
+        <span className="mt-3 block text-[0.58rem] uppercase tracking-[0.3em] text-gold">Central administration</span>
       </Link>
       <nav className="flex-1 space-y-6 px-3 pb-6" aria-label="Admin">
         {groups.map((g) => (

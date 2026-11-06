@@ -11,6 +11,7 @@ import { useWishlist } from "@/features/wishlist/store";
 import { useAuthUser } from "@/features/auth/use-auth";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { SearchOverlay } from "./search-overlay";
+import { Logo } from "@/components/ui/logo";
 
 export interface NavDivision {
   id: string;
@@ -82,19 +83,19 @@ export function SiteHeader({ divisions }: { divisions: NavDivision[] }) {
           <div className="flex items-center gap-1">
             <Sheet>
               <SheetTrigger asChild>
-                <button className="-ml-2 grid size-10 place-items-center lg:hidden" aria-label="Open menu">
+                <button className="-ml-2 grid size-10 place-items-center xl:hidden" aria-label="Open menu">
                   <Menu className="size-5" strokeWidth={1.25} />
                 </button>
               </SheetTrigger>
               <MobileMenu divisions={divisions} signedIn={Boolean(user)} />
             </Sheet>
-            <nav aria-label="Divisions" className="hidden items-center gap-7 lg:flex">
+            <nav aria-label="Divisions" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
               {divisions.map((d) => (
                 <div key={d.slug} onMouseEnter={() => enter(d.slug)} onFocus={() => enter(d.slug)}>
                   <Link
                     href={d.href}
                     className={cn(
-                      "link-u py-2 text-[0.78rem] font-medium uppercase tracking-[0.14em] text-espresso",
+                      "link-u whitespace-nowrap py-2 text-[0.76rem] font-medium uppercase tracking-[0.14em] text-espresso",
                       pathname.startsWith(d.href) && "!bg-[length:100%_1px]",
                     )}
                     aria-expanded={open === d.slug}
@@ -108,18 +109,13 @@ export function SiteHeader({ divisions }: { divisions: NavDivision[] }) {
           </div>
 
           {/* Center: wordmark */}
-          <Link href="/" className="group flex flex-col items-center" aria-label="RAVANTRA home">
-            <span className={cn("font-serif font-medium leading-none tracking-[0.34em] text-espresso transition-all duration-500", scrolled ? "text-[1.45rem]" : "text-[1.7rem] md:text-[1.95rem]")}>
-              RAVANTRA
-            </span>
-            <span className={cn("mt-1 hidden text-[0.55rem] uppercase tracking-[0.42em] text-mocha transition-all duration-500 md:block", scrolled && "h-0 overflow-hidden opacity-0")}>
-              Est. 2026 · Mumbai
-            </span>
+          <Link href="/" className="flex items-center justify-center px-3" aria-label="RAVANTRA home">
+            <Logo variant="lockup" priority height={scrolled ? 40 : 48} className="transition-[font-size] duration-500 max-sm:!text-[38px]" />
           </Link>
 
           {/* Right: utility */}
           <div className="flex items-center justify-end gap-0.5 md:gap-1.5">
-            <nav aria-label="Company" className="mr-4 hidden items-center gap-6 xl:flex">
+            <nav aria-label="Company" className="mr-3 hidden items-center gap-5 xl:flex">
               <Link href="/about" className="link-u text-[0.78rem] uppercase tracking-[0.14em]">About</Link>
               <Link href="/contact" className="link-u text-[0.78rem] uppercase tracking-[0.14em]">Contact</Link>
             </nav>
@@ -144,7 +140,7 @@ export function SiteHeader({ divisions }: { divisions: NavDivision[] }) {
         {/* Mega menu */}
         <div
           className={cn(
-            "absolute inset-x-0 top-full hidden overflow-hidden border-t border-line bg-ivory transition-[opacity,transform,visibility] duration-500 ease-[var(--ease-lux)] lg:block",
+            "absolute inset-x-0 top-full hidden overflow-hidden border-t border-line bg-ivory transition-[opacity,transform,visibility] duration-500 ease-[var(--ease-lux)] xl:block",
             active ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0",
           )}
           onMouseEnter={() => active && enter(active.slug)}
@@ -267,7 +263,10 @@ function MobileMenu({ divisions, signedIn }: { divisions: NavDivision[]; signedI
             </li>
           ))}
         </ul>
-        <p className="mt-auto pt-10 font-serif text-lg italic text-mocha">Everything that makes you, you.</p>
+        <div className="mt-auto pt-10">
+          <Logo variant="full" height={110} />
+          <p className="mt-3 font-serif text-lg italic text-mocha">Everything that makes you, you.</p>
+        </div>
       </div>
     </SheetContent>
   );

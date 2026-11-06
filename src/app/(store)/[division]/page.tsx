@@ -56,14 +56,14 @@ export default async function DivisionPage({ params, searchParams }: PageProps<"
     <>
       <section className={cn("relative overflow-hidden", theme.bg)}>
         <div className="container-lux grid items-stretch gap-0 lg:grid-cols-12">
-          <div className={cn("flex flex-col justify-end py-14 lg:col-span-5 lg:py-20", theme.text)}>
+          <div className={cn("flex min-w-0 flex-col justify-end py-14 lg:col-span-5 lg:py-20 lg:pr-10", theme.text)}>
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: division.shortName, href: `/${division.slug}` }, ...(activeCat ? [{ label: activeCat.name }] : [])]} tone={division.slug === "fashion" ? "light" : "dark"} />
             <p className={cn("eyebrow mt-10", division.slug === "fashion" ? "text-gold" : "text-mocha")}>RAVANTRA {division.shortName}</p>
             <h1 className="display mt-4 text-[clamp(3rem,6.5vw,6rem)]">{activeCat ? activeCat.name : division.shortName}</h1>
             <p className={cn("mt-6 max-w-md text-[0.98rem] leading-relaxed", theme.sub)}>
               {activeCat?.description ?? division.description}
             </p>
-            <div className="no-scrollbar -mx-4 mt-10 flex gap-2 overflow-x-auto px-4">
+            <div className="mt-10 flex flex-wrap gap-2">
               <Link
                 href={`/${division.slug}`}
                 className={cn("shrink-0 border px-4 py-2 text-[0.7rem] uppercase tracking-[0.16em] transition", theme.chip, !activeCat && (division.slug === "fashion" ? "bg-ivory !text-espresso" : "bg-espresso !text-ivory"))}
@@ -85,7 +85,7 @@ export default async function DivisionPage({ params, searchParams }: PageProps<"
               ))}
             </div>
           </div>
-          <div className="relative -mx-[clamp(1rem,4vw,3.5rem)] aspect-[16/10] lg:col-span-7 lg:mx-0 lg:-mr-[clamp(1rem,4vw,3.5rem)] lg:aspect-auto lg:min-h-[540px]">
+          <div className="relative -mx-[clamp(1rem,4vw,3.5rem)] aspect-[16/10] min-w-0 overflow-hidden lg:col-span-7 lg:mx-0 lg:-mr-[clamp(1rem,4vw,3.5rem)] lg:aspect-auto lg:min-h-[540px]">
             <Image
               src={activeCat?.image ?? division.bannerImage}
               alt=""

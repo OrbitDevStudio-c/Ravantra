@@ -33,7 +33,7 @@ function layout(title: string, body: string) {
   return `<!doctype html><html><body style="margin:0;background:#F8F5EF;font-family:Helvetica,Arial,sans-serif;color:#211B20">
   <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:40px 16px">
   <table width="560" cellpadding="0" cellspacing="0" style="background:#fff;max-width:560px">
-  <tr><td style="padding:32px 40px;border-bottom:1px solid #E8DCCB;text-align:center;font-family:Georgia,serif;font-size:26px;letter-spacing:8px">RAVANTRA</td></tr>
+  <tr><td style="padding:28px 40px;border-bottom:1px solid #E8DCCB;text-align:center"><img src="${SITE_URL}/brand/logo-full.png" width="180" alt="RAVANTRA" style="display:inline-block;width:180px;height:auto;border:0" /></td></tr>
   <tr><td style="padding:36px 40px"><h1 style="font-family:Georgia,serif;font-weight:400;font-size:28px;margin:0 0 16px">${esc(title)}</h1>${body}</td></tr>
   <tr><td style="padding:20px 40px;background:#211B20;color:#E8DCCB;font-size:11px;text-align:center">RAVANTRA demo platform · Designed &amp; developed by OrbitDevStudio</td></tr>
   </table></td></tr></table></body></html>`;

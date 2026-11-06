@@ -1,5 +1,6 @@
 import Image from "@/components/ui/smart-image";
 import { img } from "@/config/demo-data";
+import { Logo } from "@/components/ui/logo";
 
 export function AuthShell({ eyebrow, title, children, image = "1515886657613-9f3515b0c78f" }: { eyebrow: string; title: React.ReactNode; children: React.ReactNode; image?: string }) {
   return (
@@ -7,7 +8,10 @@ export function AuthShell({ eyebrow, title, children, image = "1515886657613-9f3
       <div className="relative hidden overflow-hidden bg-espresso lg:block">
         <Image src={img(image, 1400)} alt="" fill priority sizes="50vw" quality={65} className="object-cover opacity-85" />
         <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent" />
-        <p className="absolute bottom-12 left-12 max-w-sm font-serif text-4xl italic leading-tight text-ivory">“Everything that makes you, you.”</p>
+        <div className="absolute bottom-12 left-12">
+          <Logo variant="full" tone="light" height={150} />
+          <p className="mt-6 max-w-sm font-serif text-3xl italic leading-tight text-ivory">“Everything that makes you, you.”</p>
+        </div>
       </div>
       <div className="flex items-center justify-center px-5 py-16 sm:px-10">
         <div className="w-full max-w-md">

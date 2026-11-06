@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BRAND } from "@/config/site";
+import { Logo } from "@/components/ui/logo";
 import type { Division } from "@/types";
 
 export function SiteFooter({ divisions }: { divisions: Division[] }) {
@@ -8,8 +9,8 @@ export function SiteFooter({ divisions }: { divisions: Division[] }) {
     <footer className="relative overflow-hidden bg-espresso text-ivory">
       <div className="container-lux grid gap-14 pb-10 pt-20 md:grid-cols-12">
         <div className="md:col-span-4">
-          <p className="font-serif text-3xl tracking-[0.3em]">RAVANTRA</p>
-          <p className="mt-5 max-w-sm font-serif text-2xl italic leading-snug text-ivory/80">{BRAND.tagline}</p>
+          <Logo variant="full" tone="light" height={150} />
+          <p className="mt-6 max-w-sm font-serif text-2xl italic leading-snug text-ivory/80">{BRAND.tagline}</p>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/55">
             Fashion, beauty, salon &amp; spa and lifestyle — four divisions, one account, one standard of care.
           </p>
@@ -61,13 +62,8 @@ export function SiteFooter({ divisions }: { divisions: Division[] }) {
       </div>
 
       {/* Oversized outlined wordmark */}
-      <div aria-hidden className="pointer-events-none select-none px-2">
-        <p
-          className="text-center font-serif text-[21vw] leading-[0.78] tracking-[0.02em] text-transparent md:text-[19vw]"
-          style={{ WebkitTextStroke: "1px rgb(248 245 239 / 0.16)" }}
-        >
-          RAVANTRA
-        </p>
+      <div aria-hidden className="pointer-events-none select-none px-4 pb-2 pt-6 opacity-[0.09] md:px-10">
+        <Logo variant="wordmark" tone="light" height={260} className="!h-auto !w-full" />
       </div>
 
       <div className="container-lux flex flex-col gap-3 border-t border-ivory/10 py-6 text-[0.7rem] text-ivory/50 md:flex-row md:items-center md:justify-between">

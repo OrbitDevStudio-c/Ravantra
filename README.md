@@ -4,6 +4,8 @@
 > A premium women's lifestyle platform — **Fashion · Beauty & Care · Salon & Spa · Lifestyle** — with one customer account, one cart and one central admin.
 > Designed & developed by **OrbitDevStudio**.
 
+<p align="center"><img src="public/brand/logo-full.png" alt="RAVANTRA logo" width="320"></p>
+
 RAVANTRA is a fictional brand. All products, people, reviews, orders and appointments in the demo data are illustrative and flagged `is_demo`.
 
 ---
