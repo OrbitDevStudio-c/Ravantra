@@ -2,7 +2,7 @@ import Image from "@/components/ui/smart-image";
 import Link from "next/link";
 import { ArrowRight, Button } from "@/components/ui/button";
 import type { Division } from "@/types";
-import { img } from "@/config/demo-data";
+import { FASHION_IMG, img } from "@/config/demo-data";
 
 export function Hero({ divisions }: { divisions: Division[] }) {
   return (
@@ -56,14 +56,14 @@ export function Hero({ divisions }: { divisions: Division[] }) {
         <div className="relative lg:col-span-6">
           <div className="mask-reveal relative ml-auto aspect-[4/5] w-full overflow-hidden bg-champagne sm:w-[86%] lg:h-full lg:aspect-auto">
             <Image
-              src={img("1581044777550-4cfa60707c03", 1600)}
-              alt="Model in a blush organza ensemble in a golden field"
+              src={FASHION_IMG.lavenderSaree}
+              alt="Lavender tissue silk saree with a hand-embellished blouse"
               fill
               priority
               fetchPriority="high"
               sizes="(min-width:1024px) 46vw, 90vw"
               quality={70}
-              className="object-cover object-[50%_30%]"
+              className="object-cover object-[50%_22%]"
             />
           </div>
 
