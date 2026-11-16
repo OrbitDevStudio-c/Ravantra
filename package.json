@@ -1,0 +1,53 @@
+{
+  "name": "ravantra",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "db:seed:generate": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-seed.mts",
+    "db:verify": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-seed.mts && node scripts/verify-db.mjs",
+    "check": "npm run typecheck && npm run lint && npm run db:verify",
+    "db:setup": "node scripts/db-setup.mjs"
+  },
+  "dependencies": {
+    "@date-fns/tz": "^1.5.0",
+    "@hookform/resolvers": "^7.0.3",
+    "@neondatabase/serverless": "^1.2.0",
+    "@radix-ui/react-dialog": "^1.3.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "lucide-react": "^1.69.0",
+    "motion": "^14.9.1",
+    "next": "16.4.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-hook-form": "^7.91.0",
+    "recharts": "^3.10.1",
+    "server-only": "^0.0.1",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0",
+    "ws": "^8.22.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.15",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/ws": "^8.18.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
